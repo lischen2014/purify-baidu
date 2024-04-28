@@ -18,6 +18,6 @@ v0.07 从屏蔽搜索结果页的热搜榜单改为屏蔽整个右边栏
 
 ## Note
 
-本人菜鸡开发者一枚，有问题欢迎反馈
+新手开发者一枚，有问题欢迎反馈
 
 油猴(篡改猴 Tamper Monkey)脚本页：[屏蔽百度热搜](https://greasyfork.org/zh-CN/scripts/493225-%E5%B1%8F%E8%94%BD%E7%99%BE%E5%BA%A6%E7%83%AD%E6%90%9C)
