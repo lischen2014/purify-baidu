@@ -1,16 +1,14 @@
 // ==UserScript==
-// @name         屏蔽百度热搜
+// @name         【屏蔽广告】百度热搜屏蔽|百度增强|百度广告净化
 // @namespace    https://github.com/lischen2014/purify-baidu
 // @version      0.07
-// @description  一个屏蔽百度热搜的脚本
+// @description  厌烦了恶心的百度热搜榜单和混杂在搜索结果里的广告？试试这个！
 // @author       Leon
 // @match        https://www.baidu.com/*
 // @icon         data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==
 // @grant        none
 // @license      MIT
 // ==/UserScript==
-
-// 初步测试都OK
 
 (function () {
   "use strict";
