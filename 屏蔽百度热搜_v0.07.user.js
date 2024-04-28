@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         屏蔽百度热搜
 // @namespace    https://github.com/lischen2014/purify-baidu
-// @version      0.06
+// @version      0.07
 // @description  一个屏蔽百度热搜的脚本
 // @author       Leon
 // @match        https://www.baidu.com/*
@@ -21,10 +21,10 @@
   // 功能：移除热搜和其他广告
   var removeHotSearchAndAds = function () {
     // 移除侧边栏的热搜框
-    var baiduReSouSideBar = document.getElementById("con-ceiling-wrapper");
+    var baiduReSouSideBar = document.getElementById("content_right");
     if (baiduReSouSideBar) {
       baiduReSouSideBar.remove();
-      console.log("搜索结果页侧边栏榜单已关闭");
+      console.log("搜索结果页侧边栏已关闭");
     }
     // 移除主页面的热搜框
     var baiduReSouInMainPage = document.getElementById("s-hotsearch-wrapper");
