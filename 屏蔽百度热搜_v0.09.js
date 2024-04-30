@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         【屏蔽广告】百度热搜屏蔽|百度增强|百度广告净化
 // @namespace    https://github.com/lischen2014/purify-baidu
-// @version      0.07
+// @version      0.09
 // @description  厌烦了恶心的百度热搜榜单和混杂在搜索结果里的广告？试试这个！
 // @author       Leon
 // @match        https://www.baidu.com/*
@@ -10,8 +10,12 @@
 // @license      MIT
 // ==/UserScript==
 
+var SearchResultAds = `
+#content_left [style*="display:block !important;visibility:visible !important"]
+`;
+
 (function () {
-  "use strict";
+  ("use strict");
 
   var targetNode = document.querySelector("body");
   var config = { childList: true, subtree: true };
@@ -31,9 +35,8 @@
       console.log("主页热搜关键词已关闭");
     }
 
-    // 延迟移除搜索结果页使用.c-row类的广告
     setTimeout(function () {
-      var ads = document.querySelectorAll(".c-row");
+      var ads = document.querySelectorAll(SearchResultAds);
       ads.forEach(function (ad) {
         ad.remove();
         console.log("已屏蔽默认搜索结果广告");
@@ -41,7 +44,7 @@
     }, 500); // 延迟500毫秒移除广告
   };
 
-  // 功能：移除特定广告
+  // 功能：移除追加广告
   var removeSpecificAds = function () {
     var candidates = document.querySelectorAll(
       "div.result.c-container.new-pmd"
@@ -51,7 +54,7 @@
       links.forEach((link) => {
         if (link.textContent.includes("广告")) {
           candidate.remove();
-          console.log("已屏蔽含追加广告");
+          console.log("追加生成广告已屏蔽");
         }
       });
     });
@@ -62,7 +65,6 @@
     mutations.forEach((mutation) => {
       if (mutation.addedNodes && mutation.addedNodes.length) {
         removeHotSearchAndAds();
-        // 增强广告移除的调用，以应对动态加载的内容
         setTimeout(removeSpecificAds, 300); // 针对动态加载内容，稍后重试
       }
     });
