@@ -22,19 +22,20 @@ var SearchResultAds = `
 
   // 功能：移除热搜和其他广告
   var removeHotSearchAndAds = function () {
-    // 移除侧边栏的热搜框
+    // 移除搜索结果页侧边栏
     var baiduReSouSideBar = document.getElementById("content_right");
     if (baiduReSouSideBar) {
       baiduReSouSideBar.remove();
       console.log("搜索结果页侧边栏已关闭");
     }
-    // 移除主页面的热搜框
+    // 移除百度主页热搜框
     var baiduReSouInMainPage = document.getElementById("s-hotsearch-wrapper");
     if (baiduReSouInMainPage) {
       baiduReSouInMainPage.remove();
       console.log("主页热搜关键词已关闭");
     }
 
+    // 移除默认搜索结果广告
     setTimeout(function () {
       var ads = document.querySelectorAll(SearchResultAds);
       ads.forEach(function (ad) {
@@ -44,7 +45,7 @@ var SearchResultAds = `
     }, 500); // 延迟500毫秒移除广告
   };
 
-  // 功能：移除追加广告
+  // 功能：移除追加显示的广告
   var removeSpecificAds = function () {
     var candidates = document.querySelectorAll(
       "div.result.c-container.new-pmd"
