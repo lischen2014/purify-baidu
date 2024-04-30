@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         【屏蔽广告】百度热搜屏蔽|百度增强|百度广告净化
 // @namespace    https://github.com/lischen2014/purify-baidu
-// @version      0.09
+// @version      0.99
 // @description  厌烦了恶心的百度热搜榜单和混杂在搜索结果里的广告？试试这个！
 // @author       Leon
 // @match        https://www.baidu.com/*
@@ -10,9 +10,7 @@
 // @license      MIT
 // ==/UserScript==
 
-var SearchResultAds = `
-#content_left [style*="display:block !important;visibility:visible !important"]
-`;
+var SearchResultAds = `#content_left [style*="display:block !important;visibility:visible !important"]`;
 
 (function () {
   ("use strict");
